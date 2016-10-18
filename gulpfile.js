@@ -9,6 +9,8 @@ var gulp        = require('gulp'),
     hexo        = new Hexo(process.cwd(), {}),
     clean = require('gulp-clean');
 
+var $ = require('gulp-load-plugins')();
+
 var src = {
     scss: './scss/',
     css:  './source/css',
@@ -23,7 +25,7 @@ watchFiles = [
 // Static Server + watching scss/html files
 gulp.task('serve', ['sass:watch'], function() {
 
-    hexo.init.then(function(){
+    hexo.init().then(function(){
       return hexo.call('generate', {watch: true});
     }).catch(function(err){
       console.log(err);
@@ -37,7 +39,7 @@ gulp.task('serve', ['sass:watch'], function() {
         logLevel: "debug"
     });
 
-    hexo.init.then(function(){
+    hexo.init().then(function(){
       return hexo.call('generate', {watch: true});
     }).catch(function(err){
       console.log(err);
@@ -45,31 +47,27 @@ gulp.task('serve', ['sass:watch'], function() {
 
 });
 
-
-
-gulp.task('build', ['clean', 'copy']);
-
-gulp.task('copy', function (cb) {
-    gulp.src(['../../public/**/*'])
-        .pipe(gulp.dest('public'));
-
-});
-
-gulp.task('clean', function () {
-    return gulp.src('public', {read: false})
-            .pipe(clean({force: true}))
-});
-
-
-
 // Compile sass into CSS
 gulp.task('sass', function() {
     // gulp.src(src.scss + "/*/*.scss")
     gulp.src(src.scss + "{,*}/*.scss")
         .pipe(sass({}))
-        // .pipe(gulp.dest(src.css))
-        .pipe(gulp.dest('../../source/css/'))
+        .pipe(gulp.dest('source/css/'))
         .pipe(reload({stream: true}));
+});
+
+gulp.task('js', function() {
+  return gulp.src(['bower_components/foundation/js/vendor/jquery.js',
+                    'bower_components/foundation/js/vendor/modernizr.js',
+                    'bower_components/foundation/js/vendor/fastclick.js',
+                    'bower_components/foundation/js/vendor/jqery.cookie.js',
+                    'bower_components/foundation/js/vendor/placeholder.js',
+                    'bower_components/foundation/js/foundation.min.js',
+                    'source/fancybox/jquery.fancybox.pack.js'])
+            .pipe($.concat('theme.js'))
+            .pipe($.uglify())
+            .pipe(gulp.dest('source/js/'))
+            .pipe(reload({stream: true}));
 });
 
 gulp.task('sass:watch', function () {
