@@ -1,9 +1,6 @@
 # Zurb Foundation
 
-A brand new default theme for [Hexo]. This theme is <b>Work in progress</b>. It utilizes Zurb Foundation 5+.
-
-- [Preview](http://hexo.io/themes/)
-- [Demo](http://chrisjlee.github.io/hexo-theme-zurb-foundation/)
+This is a fork of chirsjlee's [Hexo] Foundation theme, currently using Foundation 5.
 
 ## Installation
 
@@ -13,7 +10,7 @@ A brand new default theme for [Hexo]. This theme is <b>Work in progress</b>. It 
 $ git clone https://github.com/chrisjlee/hexo-theme-zurb-foundation.git
 ```
 
-**Landscape requires Hexo 3.0 and above.**
+**The theme requires Hexo 3.0 and above.**
 
 ### Enable
 
