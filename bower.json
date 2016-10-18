@@ -2,10 +2,11 @@
   "name": "zurb-foundation-theme",
   "version": "0.1.0",
   "authors": [
-    "Chris Lee <iam@chrisjlee.net>"
+    "Chris Lee <iam@chrisjlee.net>",
+    "Zoltán Adamek <djscorchio@gmail.com>"
   ],
   "license": "MIT",
-  "homepage": "http://hire.chrisjlee.net",
+  "homepage": "http://zoltanadamek.com",
   "ignore": [
     "**/.*",
     "node_modules",
