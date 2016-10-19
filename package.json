@@ -1,25 +1,24 @@
 {
-  "name": "hexo-theme-foundation",
+  "name": "hexo-theme-zurb-foundation",
   "repository" :
-  { "type" : "git"
-  , "url" : "https://github.com/chrisjlee/hexo-theme-zurb-foundation.git"
+  {
+    "type" : "git",
+    "url" : "https://github.com/scorchio/hexo-theme-zurb-foundation.git"
   },
   "version": "0.1.0",
   "devDependencies": {
-    "browser-sync": "^2.17.3",
     "gulp": "^3.9.1",
-    "gulp-bower": "0.0.13",
-    "gulp-clean": "^0.3.2",
     "gulp-load-plugins": "^1.3.0",
-    "gulp-notify": "^2.2.0",
     "gulp-sass": "^2.3.2",
     "gulp-concat": "^2.6.0",
     "gulp-uglify": "^2.0.0",
-    "node-inspector": "^0.12.8",
-    "run-sequence": "^1.2.2"
+    "gulp-autoprefixer": "^3.1.0"
+  },
+  "dependencies": {
+    "gulp-autoprefixer": "^3.1.0"
   },
   "scripts": {
-    "setup": "bower install && gulp install",
-    "deploy": "cp -rfv ../../public . && git subtree push --prefix dist origin gh-pages"
+    "start": "gulp",
+    "build": "gulp sass"
   }
 }
