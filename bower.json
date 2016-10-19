@@ -1,6 +1,6 @@
 {
   "name": "zurb-foundation-theme",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "authors": [
     "Chris Lee <iam@chrisjlee.net>",
     "Zoltán Adamek <djscorchio@gmail.com>"
@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "foundation": "~5.5.2"
+    "foundation-sites": "~6.2.0",
+      "motion-ui": "~1.2.2"
   }
 }
