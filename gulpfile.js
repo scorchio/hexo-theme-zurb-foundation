@@ -19,6 +19,19 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('source/css'));
 });
 
-gulp.task('default', ['sass'], function() {
-  gulp.watch(['scss/**/*.scss'], ['sass']);
+gulp.task('js', function() {
+  return gulp.src(['bower_components/jquery/dist/jquery.js',
+                    'bower_components/what-input/what-input.js',
+                    'bower_components/foundation-sites/dist/foundation.js',
+                    'js/app.js'])
+            .pipe($.concat('app.js'))
+            .pipe($.uglify())
+            .pipe(gulp.dest('source/js/'));
 });
+
+gulp.task('watch', ['sass', 'js'], function() {
+  gulp.watch(['scss/**/*.scss'], ['sass']);
+  gulp.watch(['js/**/*.js'], ['js']);
+});
+
+gulp.task('default', ['watch']);
