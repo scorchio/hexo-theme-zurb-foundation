@@ -2,12 +2,11 @@
 <body>
   <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
   <div class="l-main row">
-    <section id="main" class="<% if (theme.sidebar){ %>medium-8 large-8 columns<% } %>">
+    <section id="main" class="medium-8 large-8 columns">
       <%- body %>
     </section>
     <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
   </div>
-  <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
   <hr />
   <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
   <%- partial('_partial/disqus') %>
