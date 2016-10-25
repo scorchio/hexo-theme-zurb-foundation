@@ -14,6 +14,7 @@
       <span class="article-datetime">
       <%- partial('post/date', {class_name: 'article-date', date_format: 'YYYY. MMMM D.'}) %>
       </span>
+      <%- partial('post/tag') %>
       <%- partial('post/category') %>
     </div>
 
@@ -42,8 +43,6 @@
       <% if (post.comments && config.disqus_shortname){ %>
         <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link">Comments</a>
       <% } %>
-
-      <%- partial('post/tag') %>
     </footer>
   </div>
   <% if (!index){ %>
