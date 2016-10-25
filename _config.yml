@@ -10,11 +10,8 @@ fancybox: true
 
 # Sidebar
 widgets:
-- category
 - tag
 - tagcloud
-- archive
-- recent_posts
 
 # Miscellaneous
 google_analytics:
