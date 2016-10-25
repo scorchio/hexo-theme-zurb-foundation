@@ -10,8 +10,8 @@ function paginatorHelper(options) {
   var space = options.hasOwnProperty('space') ? options.space : '<li class="ellipsis"></li>';
   var base = options.base || this.page.base || '';
   var format = options.format || this.config.pagination_dir + '/%d/';
-  var prevText = options.prev_text || 'Prev';
-  var nextText = options.next_text || 'Next';
+  var prevPageText = options.prev_page_text || 'Previous page';
+  var nextPageText = options.prev_page_text || 'Next page';
   var prevNext = options.hasOwnProperty('prev_next') ? options.prev_next : true;
   var transform = options.transform;
   var self = this;
@@ -36,10 +36,10 @@ function paginatorHelper(options) {
 
   // Display the link to the previous page
   if (prevNext && current > 1) {
-    result += '<li class="pagination-previous"><a href="' + link(current - 1) + '" aria-label="Previous page">Previous <span class="show-for-sr">page</span></a></span></li>';
+    result += '<li class="pagination-previous"><a href="' + link(current - 1) + '" aria-label="' + prevPageText + '">' + prevPageText + '</a></span></li>';
   }
   else {
-    result += '<li class="pagination-previous disabled">Previous <span class="show-for-sr">page</span></li>';
+    result += '<li class="pagination-previous disabled">' + prevPageText + '</span></li>';
   }
 
   if (options.show_all) {
@@ -103,10 +103,10 @@ function paginatorHelper(options) {
 
   // Display the link to the next page
   if (prevNext && current < total) {
-    result += '<li class="pagination-next"><a href="' + link(current + 1) + '" aria-label="Previous page">Next <span class="show-for-sr">page</span></a></span></li>';
+    result += '<li class="pagination-next"><a href="' + link(current + 1) + '" aria-label="' + nextPageText + '">' + nextPageText + '</a></span></li>';
   }
   else {
-    result += '<li class="pagination-next disabled">Next <span class="show-for-sr">page</span></li>';
+    result += '<li class="pagination-next disabled">' + nextPageText + '</li>';
   }
 
   result += '</ul>';
