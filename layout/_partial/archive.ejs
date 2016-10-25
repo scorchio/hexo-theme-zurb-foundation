@@ -4,7 +4,7 @@
   <% }) %>
   <% if (page.total > 1){ %>
     <nav id="pagination">
-      <%- paginator({
+      <%- foundation_paginator({
         prev_page_text: __('previous_page'),
         next_page_text: __('next_page')
       }) %>

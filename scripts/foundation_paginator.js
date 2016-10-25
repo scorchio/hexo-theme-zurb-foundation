@@ -1,6 +1,6 @@
 'use strict';
 
-function paginatorHelper(options) {
+hexo.extend.helper.register('foundation_paginator', function (options) {
   options = options || {};
 
   var current = options.current || this.page.current || 0;
@@ -111,9 +111,4 @@ function paginatorHelper(options) {
 
   result += '</ul>';
   return result;
-}
-
-//module.exports = paginatorHelper;
-
-// Override the default pagination with our customized one.
-hexo.extend.helper.store['paginator'] = paginatorHelper;
+});
