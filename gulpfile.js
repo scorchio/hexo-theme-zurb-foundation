@@ -6,6 +6,11 @@ var sassPaths = [
   'bower_components/motion-ui/src'
 ];
 
+gulp.task('foundation-icons', function() {
+    return gulp.src(['assets/**/**'])
+        .pipe(gulp.dest('source/'));
+});
+
 gulp.task('sass', function() {
   return gulp.src('scss/app.scss')
     .pipe($.sass({
@@ -29,7 +34,7 @@ gulp.task('js', function() {
             .pipe(gulp.dest('source/js/'));
 });
 
-gulp.task('watch', ['sass', 'js'], function() {
+gulp.task('watch', ['foundation-icons', 'sass', 'js'], function() {
   gulp.watch(['scss/**/*.scss'], ['sass']);
   gulp.watch(['js/**/*.js'], ['js']);
 });
