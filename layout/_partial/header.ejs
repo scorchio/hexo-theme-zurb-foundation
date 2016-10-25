@@ -1,25 +1,11 @@
-<div class="top-bar">
-  <div class="top-bar-left">
-    <ul class="menu">
-      <li class="menu-text">
-        <h1 class="logo-wrap">
-          <a href="<%- url_for() %>" id="logo"><%= config.title %></a>
-        </h1>
-        <% if (theme.subtitle){ %>
-          <h2 class="hide">
-            <%= theme.subtitle %>
-          </h2>
-        <% } %>
-      </li>
-    </ul>
-  </div>
-  <div class="top-bar-right">
-    <ul class="menu">
-      <% for (var i in theme.menu){ %>
-      <li>
-        <a class="main-nav-link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
-      </li>
-      <% } %>
-    </ul>
-  </div>
+
+<div id="header" class="row">
+	<h1 class="logo-wrap">
+	  <a href="<%- url_for() %>" id="logo"><%= config.title %></a>
+	</h1>
+	<% if (theme.subtitle){ %>
+	  <h2 class="small">
+		<%= theme.subtitle %>
+	  </h2>
+	<% } %>
 </div>
