@@ -1,0 +1,21 @@
+categories: Kategóriák
+search: Keresés
+tags: Címkék
+tagcloud: Címkefelhő
+tweets: Tweek-ek
+prev: Előző
+next: Következő
+comment: Megjegyzések
+archive_a: Archívum
+archive_b: "Archívum: %s"
+page: "%d. oldal"
+recent_posts: Legfrissebb bejegyzések
+previous_page: &laquo; Előző oldal
+next_page: Következő oldal &raquo;
+newer: Újabb
+older: Régebbi
+share: Megosztás
+powered_by: A <a href="http://hexo.io/" target="_blank">Hexo</a> hajtja.
+rss_feed: RSS feed
+category: Kategória
+tag: Címke
