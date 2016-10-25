@@ -34,10 +34,10 @@
 
     <footer class="article-footer">
 
-      <div class="large-4 columns article-share article-share-fb"><a href="https://www.facebook.com/sharer/sharer.php?u=<%- post.permalink %>" url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link">Share on Facebook</a>
+      <div class="article-share article-share-fb"><a class="button" href="https://www.facebook.com/sharer/sharer.php?u=<%- post.permalink %>" url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link">Share on Facebook</a>
       </div>
 
-      <div class="large-4 columns article-share article-share-tw"><a href='https://twitter.com/home?status=<%=post.title%> <%=post.permalink%> '></a></div>
+      <div class="article-share article-share-tw"><a class="button" href='https://twitter.com/home?status=<%=post.title%> <%=post.permalink%> '>Share on Twitter</a></div>
 
       <% if (post.comments && config.disqus_shortname){ %>
         <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link">Comments</a>
