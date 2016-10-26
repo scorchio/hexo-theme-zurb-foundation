@@ -11,6 +11,11 @@ gulp.task('foundation-icons', function() {
         .pipe(gulp.dest('source/'));
 });
 
+gulp.task('photoswipe', function() {
+  return gulp.src(['bower_components/photoswipe/dist/**'])
+            .pipe(gulp.dest('source/photoswipe'))
+});
+
 gulp.task('sass', function() {
   return gulp.src('scss/app.scss')
     .pipe($.sass({
@@ -24,6 +29,13 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('source/css'));
 });
 
+gulp.task('jsPublic', ['js'], function() {
+   return gulp.src('source/js/app.js').pipe(gulp.dest('../../public/js'));
+});
+gulp.task('sassPublic', ['sass'], function() {
+    return gulp.src('source/css/app.css').pipe(gulp.dest('../../public/css'));
+});
+
 gulp.task('js', function() {
   return gulp.src(['bower_components/jquery/dist/jquery.js',
                     'bower_components/what-input/what-input.js',
@@ -34,9 +46,9 @@ gulp.task('js', function() {
             .pipe(gulp.dest('source/js/'));
 });
 
-gulp.task('watch', ['foundation-icons', 'sass', 'js'], function() {
+gulp.task('watch', ['foundation-icons', 'photoswipe', 'sass', 'js'], function() {
   gulp.watch(['scss/**/*.scss'], ['sass']);
-  gulp.watch(['js/**/*.js'], ['js']);
+  gulp.watch(['js/**/*.js'], ['js', 'jsPublic']);
 });
 
 gulp.task('default', ['watch']);
