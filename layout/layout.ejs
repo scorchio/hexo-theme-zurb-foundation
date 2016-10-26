@@ -10,6 +10,10 @@
   <hr />
   <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
   <%- partial('_partial/disqus') %>
+
+  <%- partial('_partial/photoswipe', null, {cache: !config.relative_link}) %>
+  <%- js('photoswipe/photoswipe.min.js') %>
+  <%- js('photoswipe/photoswipe-ui-default.min.js') %>
   <%- js('js/app') %>
 </body>
 </html>
