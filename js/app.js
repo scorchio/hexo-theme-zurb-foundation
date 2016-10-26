@@ -5,9 +5,11 @@ $(document).ready(function() {
     var $pswp = $('.pswp')[0];
     var image = [];
 
+    const IMG_LINK_SELECTOR = 'a.img-a-lightbox';
+
     var getItems = function() {
         var items = [];
-        $('a.img-a-lightbox').each(function(index) {
+        $(IMG_LINK_SELECTOR).each(function(index) {
             $(this).data('itemindex', index);
             var $href   = $(this).attr('href'),
                 $size   = $(this).data('size').split('x'),
@@ -34,7 +36,7 @@ $(document).ready(function() {
         image[index].src = value['src'];
     });
 
-    $('.article-main').on('click', 'a.img-a-lightbox', function(event) {
+    $('.article-main').on('click', IMG_LINK_SELECTOR, function(event) {
         event.preventDefault();
 
         var $index = $(this).data('itemindex');
