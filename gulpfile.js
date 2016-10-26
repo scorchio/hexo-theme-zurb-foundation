@@ -1,5 +1,8 @@
-var gulp = require('gulp');
-var $    = require('gulp-load-plugins')();
+var gulp = require('gulp'),
+    $    = require('gulp-load-plugins')(),
+    debug = require('gulp-debug'),
+    clean = require('gulp-clean'),
+    responsive = require('gulp-responsive');
 
 var sassPaths = [
   'bower_components/foundation-sites/scss',
@@ -49,6 +52,30 @@ gulp.task('js', function() {
 gulp.task('watch', ['foundation-icons', 'photoswipe', 'sass', 'js'], function() {
   gulp.watch(['scss/**/*.scss'], ['sass']);
   gulp.watch(['js/**/*.js'], ['js', 'jsPublic']);
+});
+
+gulp.task('cleanResponsiveImages', function() {
+    return gulp.src('../../source/_posts/**/*-responsive-*-*.{png,jpg}')
+        .pipe(debug({title: 'clean:'}))
+        .pipe(clean({force: true}));
+});
+
+gulp.task('responsiveImages', function() {
+    return gulp.src('../../source/_posts/**/*.{png,jpg}')
+        .pipe(responsive({
+            '**/*.*': [
+                {
+                    width: 800,
+                    rename: {
+                        suffix: "-responsive-normal-800"
+                    }
+                }
+            ]
+        }, {
+            errorOnEnlargement: false,
+            skipOnEnlargement: true,
+        }))
+        .pipe(gulp.dest('../../source/_posts/'));
 });
 
 gulp.task('default', ['watch']);
