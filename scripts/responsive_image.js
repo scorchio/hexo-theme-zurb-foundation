@@ -1,17 +1,42 @@
 'use strict';
 
-var asset_path = require('../../../node_modules/hexo/lib/plugins/tag/asset_path');
-asset_path = asset_path(hexo);
+var url = require('url');
+var sizeOf = require('image-size');
+var fs = require('hexo-fs');
 
-hexo.extend.tag.register('responsive_image', function (slug, alt, lightbox) {
-    /*
-    * <a class="img-a-lightbox" href="{% asset_path ABoldogsagMintVersenyelony.jpg %}" data-size="450x600">
-    *     {% asset_img ABoldogsagMintVersenyelony-responsive-mini-256.jpg A boldogság, mint versenyelőny %}
-    * </a>
+var hexo = hexo || {};
+var asset_path = hexo.extend.tag.env.extensions.asset_path.fn;
 
-    */
-    alt = alt || "";
-    lightbox = lightbox || true;
-    var result = '<a class="img-a-lightbox" href="' + asset_path(slug) + '</a>';
-    return result;
+hexo.extend.tag.register('responsive_image', function (args) {
+
+    var PostAsset = hexo.model('PostAsset');
+
+    function assetPath(id, slug) {
+        if (!slug) return;
+
+        var asset = PostAsset.findOne({post: id, slug: slug});
+        if (!asset) return;
+
+        return asset.path;
+    }
+
+    var slug = args.shift();
+    if (!slug) return;
+
+    var slug_mini = args.shift();
+    if (!slug_mini) return;
+
+    var alt = args.shift() || "";
+    var lightbox = args.shift() || true;
+
+    var asset_normal = assetPath(this._id, slug);
+    var asset_normal_url = url.resolve(hexo.config.root, asset_normal);
+    var asset_thumb_url = url.resolve(hexo.config.root, assetPath(this._id, slug_mini));
+
+    var dimensions = sizeOf(hexo.public_dir + asset_normal);
+
+    return '<a class="img-a-lightbox" ' +
+        'href="' + asset_normal_url +
+        '" data-size="' +  dimensions.width+ 'x' + dimensions.height +
+        '"><img src="' + asset_thumb_url + '" alt="' + alt + '"/></a>';
 });
