@@ -29,11 +29,12 @@ hexo.extend.tag.register('responsive_image', function (args) {
     var alt = args.shift() || "";
     var lightbox = args.shift() || true;
 
+    var asset_original = this.asset_dir + slug;
     var asset_normal = assetPath(this._id, slug);
     var asset_normal_url = url.resolve(hexo.config.root, asset_normal);
     var asset_thumb_url = url.resolve(hexo.config.root, assetPath(this._id, slug_mini));
 
-    var dimensions = sizeOf(hexo.public_dir + asset_normal);
+    var dimensions = sizeOf(asset_original);
 
     return '<a class="img-a-lightbox" ' +
         'href="' + asset_normal_url +
