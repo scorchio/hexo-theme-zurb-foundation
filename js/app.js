@@ -63,7 +63,7 @@ $(document).ready(function() {
             }
         }
     ]).on('autocomplete:selected', function(event, suggestion, dataset) {
-        console.log(suggestion, dataset);
+        window.location.href = suggestion.path;
     });
 
 });
