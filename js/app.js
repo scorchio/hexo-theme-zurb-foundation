@@ -50,4 +50,20 @@ $(document).ready(function() {
         lightBox.init();
     });
 
+    var client = algoliasearch('2ILC8NZH7T', 'c33e2a02105ba1b5f531d2f7ef32e6da');
+    var index = client.initIndex('scorchioblog_content');
+    $('#searchbox').autocomplete({ hint: false }, [
+        {
+            source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 10 }),
+            displayKey: 'title',
+            templates: {
+                suggestion: function(suggestion) {
+                    return suggestion._highlightResult.title.value;
+                }
+            }
+        }
+    ]).on('autocomplete:selected', function(event, suggestion, dataset) {
+        console.log(suggestion, dataset);
+    });
+
 });

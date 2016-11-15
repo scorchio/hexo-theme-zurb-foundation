@@ -44,6 +44,8 @@ gulp.task('js', function () {
     return gulp.src(['bower_components/jquery/dist/jquery.js',
         'bower_components/what-input/what-input.js',
         'bower_components/foundation-sites/dist/foundation.js',
+        'bower_components/algoliasearch/dist/algoliasearch.jquery.js',
+        'bower_components/algolia-autocomplete.js/dist/autocomplete.jquery.js',
         'js/app.js'])
         .pipe($.concat('app.js'))
         .pipe($.uglify())

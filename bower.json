@@ -17,6 +17,8 @@
   "dependencies": {
     "foundation-sites": "~6.2.0",
     "motion-ui": "~1.2.2",
-    "photoswipe": "^4.1.1"
+    "photoswipe": "^4.1.1",
+    "algolia-autocomplete.js": "^0.22.1",
+    "algoliasearch": "^3.19.1"
   }
 }
