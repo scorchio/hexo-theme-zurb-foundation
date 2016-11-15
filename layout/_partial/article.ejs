@@ -11,9 +11,11 @@
     <% } %>
 
     <div class="article-meta">
+      <% if (post.layout !== 'page') { %>
       <span class="article-datetime">
       <%- partial('post/date', {class_name: 'article-date', date_format: 'YYYY. MMMM D.'}) %>
       </span>
+      <% } %>
       <%- partial('post/tag') %>
       <%- partial('post/category') %>
     </div>
