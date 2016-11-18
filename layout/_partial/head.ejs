@@ -8,7 +8,7 @@
   var title = page.title;
 
   if (is_archive()){
-    title = 'Archives';
+    title = __('archive_a');
 
     if (is_month()){
       title += ': ' + page.year + '/' + page.month;
@@ -16,9 +16,9 @@
       title += ': ' + page.year;
     }
   } else if (is_category()){
-    title = 'Category: ' + page.category;
+    title = __('category') + ': ' + page.category;
   } else if (is_tag()){
-    title = 'Tag: ' + page.tag;
+    title = __('tag') + ': ' + page.tag;
   }
   %>
 
