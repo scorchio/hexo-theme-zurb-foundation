@@ -1,4 +1,5 @@
 <div class="article-dates">
+  <% if (is_post()) { %>
   <%= __('post_made_at') %>
   <a href="<%- url_for(post.path) %>" class="<%= class_name %>">
     <time datetime="<%= date_xml(post.date) %>"><%= date(post.date, date_format) %></time>
@@ -7,6 +8,11 @@
   <%= __('post_updated_at') %>
   <a href="<%- url_for(post.path) %>" class="<%= class_name %>">
     <time datetime="<%= date_xml(post.updated) %>"><%= date(post.updated, date_format) %></time>
+  </a>
+  <% } %>
+  <% } else { %>
+  <a href="<%- url_for(post.path) %>" class="<%= class_name %>">
+    <time datetime="<%= date_xml(post.date) %>"><%= date(post.date, date_format) %></time>
   </a>
   <% } %>
 </div>
