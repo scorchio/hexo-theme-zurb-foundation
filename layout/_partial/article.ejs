@@ -26,7 +26,7 @@
         <%- post.excerpt %>
         <% if (theme.excerpt_link){ %>
           <p class="article-more-link">
-            <a class="primary button" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+            <a class="primary button expanded" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
           </p>
         <% } %>
       <% } else { %>
