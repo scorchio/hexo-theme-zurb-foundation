@@ -15,6 +15,22 @@ html {
   font-size: 1em;
 }
 
+.article-dates {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+.article-footer {
+  margin-top: 2em;
+}
+
+#sidebar {
+  padding: 0 2em;
+  margin-top: 17px;
+}
+
 .article-nav-link strong { line-height: 2em; }
 #article-nav-newer { text-align: left; }
 #article-nav-older { text-align: right; }
@@ -37,10 +53,7 @@ article .article-meta {
   }
 }
 article {
-  margin-bottom: 0.5em;
-}
-article .article-datetime {
-  margin-right: 0.5em;
+  margin-bottom: 2em;
 }
 
 #pagination {

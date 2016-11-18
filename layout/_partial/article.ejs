@@ -10,13 +10,13 @@
     <% } %>
 
     <div class="article-meta">
+      <%- partial('post/tag') %>
+      <%- partial('post/category') %>
       <% if (post.layout !== 'page') { %>
       <span class="article-datetime">
       <%- partial('post/date', {class_name: 'article-date', date_format: 'YYYY. MMMM D.'}) %>
       </span>
       <% } %>
-      <%- partial('post/tag') %>
-      <%- partial('post/category') %>
     </div>
 
 
@@ -26,7 +26,7 @@
         <%- post.excerpt %>
         <% if (theme.excerpt_link){ %>
           <p class="article-more-link">
-            <a class="hollow button" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+            <a class="primary button" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
           </p>
         <% } %>
       <% } else { %>
@@ -38,8 +38,7 @@
     <footer class="article-footer">
 
       <div class="article-share">
-		  <a class="button article-share-link" href="https://www.facebook.com/sharer/sharer.php?u=<%- encodeURIComponent(post.permalink) %>" data-id="<%= post._id %>"><i class="fi-social-facebook"></i> <%= __('share_on_fb')%></a>
-		  <a class="button" href='https://twitter.com/home?status=<%= encodeURIComponent(post.title + "|" + post.permalink) %> '><i class="fi-social-twitter"></i> <%= __('share_on_twitter')%></a>
+		  <a class="button hollow article-share-link" href="https://www.facebook.com/sharer/sharer.php?u=<%- encodeURIComponent(post.permalink) %>" data-id="<%= post._id %>"><i class="fi-social-facebook"></i> <%= __('share_on_fb')%></a>
       </div>
 
       <% if (post.comments && config.disqus_shortname){ %>
