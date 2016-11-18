@@ -1,4 +1,4 @@
-<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %> row" itemscope itemprop="blogPost">
+<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %> row">
   <div class="article-main">
 
     <%- partial('post/gallery') %>
@@ -22,7 +22,7 @@
 
 
 
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
         <% if (theme.excerpt_link){ %>
@@ -38,8 +38,8 @@
     <footer class="article-footer">
 
       <div class="article-share">
-		  <a class="button" href="https://www.facebook.com/sharer/sharer.php?u=<%- post.permalink %>" url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link"><i class="fi-social-facebook"></i> <%= __('share_on_fb')%></a>
-		  <a class="button" href='https://twitter.com/home?status=<%=post.title%> <%=post.permalink%> '><i class="fi-social-twitter"></i> <%= __('share_on_twitter')%></a>
+		  <a class="button article-share-link" href="https://www.facebook.com/sharer/sharer.php?u=<%- encodeURIComponent(post.permalink) %>" data-id="<%= post._id %>"><i class="fi-social-facebook"></i> <%= __('share_on_fb')%></a>
+		  <a class="button" href='https://twitter.com/home?status=<%= encodeURIComponent(post.title + "|" + post.permalink) %> '><i class="fi-social-twitter"></i> <%= __('share_on_twitter')%></a>
       </div>
 
       <% if (post.comments && config.disqus_shortname){ %>

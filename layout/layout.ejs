@@ -2,9 +2,9 @@
 <body>
   <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
   <div class="l-main row">
-    <section id="main" class="medium-8 large-8 columns">
+    <main id="main" class="medium-8 large-8 columns">
       <%- body %>
-    </section>
+    </main>
     <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
   </div>
   <hr />

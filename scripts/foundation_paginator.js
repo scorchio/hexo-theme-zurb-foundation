@@ -32,14 +32,14 @@ hexo.extend.helper.register('foundation_paginator', function (options) {
       '</a></li>';
   }
 
-  result += '<ul class="pagination" role="navigation" aria-label="Pagination">';
+  result += '<ul class="pagination" aria-label="Pagination">';
 
   // Display the link to the previous page
   if (prevNext && current > 1) {
-    result += '<li class="pagination-previous"><a href="' + link(current - 1) + '" aria-label="' + prevPageText + '">' + prevPageText + '</a></span></li>';
+    result += '<li class="pagination-previous"><a href="' + link(current - 1) + '" aria-label="' + prevPageText + '">' + prevPageText + '</a></li>';
   }
   else {
-    result += '<li class="pagination-previous disabled">' + prevPageText + '</span></li>';
+    result += '<li class="pagination-previous disabled">' + prevPageText + '</li>';
   }
 
   if (options.show_all) {
@@ -103,7 +103,7 @@ hexo.extend.helper.register('foundation_paginator', function (options) {
 
   // Display the link to the next page
   if (prevNext && current < total) {
-    result += '<li class="pagination-next"><a href="' + link(current + 1) + '" aria-label="' + nextPageText + '">' + nextPageText + '</a></span></li>';
+    result += '<li class="pagination-next"><a href="' + link(current + 1) + '" aria-label="' + nextPageText + '">' + nextPageText + '</a></li>';
   }
   else {
     result += '<li class="pagination-next disabled">' + nextPageText + '</li>';
