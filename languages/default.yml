@@ -24,3 +24,5 @@ article_archive_date_format: MMM D
 no_title: (no title)
 post_made_at: Post made at
 post_updated_at: Post updated at
+this_is_most_recent: This is the most recent post.
+this_is_least_recent: This is the least recent post.

@@ -26,3 +26,5 @@ article_archive_date_format: MMM. D.
 no_title: (cím nélküli)
 post_made_at: "Készült: "
 post_updated_at: "Utoljára frissítve: "
+this_is_most_recent: Ez a legfrissebb post.
+this_is_least_recent: Ez a legrégebbi post.
