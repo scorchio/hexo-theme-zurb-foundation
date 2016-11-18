@@ -212,7 +212,7 @@ $accordionmenu-arrow-color: $primary-color;
 // 9. Badge
 // --------
 
-$badge-background: $primary-color;
+$badge-background: lighten($primary-color, 42%);
 $badge-color: foreground($badge-background);
 $badge-padding: 0.3em;
 $badge-minwidth: 2.1em;
@@ -360,11 +360,11 @@ $input-radius: $global-radius;
 // 20. Label
 // ---------
 
-$label-background: $primary-color;
+$label-background: lighten($primary-color, 42%);
 $label-color: foreground($label-background);
 $label-font-size: 0.9rem;
 $label-padding: 0.33333rem 0.5rem;
-$label-radius: $global-radius;
+$label-radius: 4px;
 
 // 21. Media Object
 // ----------------
