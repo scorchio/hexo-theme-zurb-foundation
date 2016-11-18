@@ -66,8 +66,8 @@ $(document).ready(function() {
         window.location.href = suggestion.path;
     });
 
-    $('body').flowtype({
+    /*$('body').flowtype({
         minFont: 16,
         maxFont: 20
-    });
+    });*/
 });

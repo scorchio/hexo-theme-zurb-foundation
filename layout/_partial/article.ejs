@@ -34,6 +34,7 @@
       <% } %>
     </div>
 
+    <% if (!post.is_404) { %>
     <footer class="article-footer">
 
       <div class="article-share">
@@ -45,6 +46,7 @@
         <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link">Comments</a>
       <% } %>
     </footer>
+    <% } %>
   </div>
   <% if (!index){ %>
     <%- partial('post/nav') %>
