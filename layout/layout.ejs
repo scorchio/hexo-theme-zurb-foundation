@@ -5,7 +5,9 @@
     <main id="main" class="medium-8 large-8 columns">
       <%- body %>
     </main>
+    <aside id="sidebar" class="medium-4 large-4 columns">
     <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
+    </aside>
   </div>
   <hr />
   <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>

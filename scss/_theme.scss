@@ -1,0 +1,11 @@
+.article-nav-link strong { line-height: 2em; }
+#article-nav-newer { text-align: left; }
+#article-nav-older { text-align: right; }
+
+.tag-list-count.badge {
+  position: relative;
+  top: -2px;
+  left: 4px;
+}
+
+a.label:hover { color: #e6e6e6; }
