@@ -27,8 +27,9 @@ html {
 }
 
 #sidebar {
-  padding: 0 2em;
-  margin-top: 17px;
+  @include breakpoint(large) {
+    margin-top: 17px;
+  }
 }
 
 .article-nav-link strong { line-height: 2em; }
