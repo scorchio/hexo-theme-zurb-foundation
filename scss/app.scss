@@ -4,6 +4,9 @@
 @import 'foundation';
 @import 'motion-ui';
 @import 'algolia';
+@import '../bower_components/photoswipe/src/css/main';
+@import 'photoswipe-skin-setting';
+@import '../bower_components/photoswipe/src/css/default-skin/default-skin';
 
 @include foundation-global-styles;
 @include foundation-grid;

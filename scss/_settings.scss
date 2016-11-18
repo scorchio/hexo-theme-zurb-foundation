@@ -62,7 +62,7 @@ $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: 'Source Sans Pro', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -102,8 +102,8 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
-$header-font-weight: $global-weight-normal;
+$header-font-family: 'Lato', Helvetica, Roboto, Arial, sans-serif;
+$header-font-weight: 300;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-sizes: (
@@ -362,7 +362,7 @@ $input-radius: $global-radius;
 
 $label-background: $primary-color;
 $label-color: foreground($label-background);
-$label-font-size: 0.8rem;
+$label-font-size: 0.9rem;
 $label-padding: 0.33333rem 0.5rem;
 $label-radius: $global-radius;
 

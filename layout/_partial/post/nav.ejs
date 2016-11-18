@@ -1,24 +1,20 @@
-<%
-var col = 6;
-if (post.prev && !post.next || !post.prev && post.next) {
-  col = 12;
-} %>
+
 <% if (post.prev || post.next){ %>
 <nav id="article-nav" class="row">
 
   <% if (post.prev){ %>
-    <div class="article-nav-link medium-<%= col %> large-<%= col %> columns">
+    <div class="article-nav-link medium-6 large-6 <%= !post.next ? 'end' : '' %> columns">
       <a href="<%- url_for(post.prev.path) %>" id="article-nav-newer" class="article-nav-link-wrap hollow button expanded">
-        <strong class="article-nav-caption"><%- __('newer') %> </strong>
+        <strong class="article-nav-caption">&larr; <%- __('newer') %> </strong>
         <div class="article-nav-title"><%= post.prev.title %></div>
       </a>
     </div>
   <% } %>
 
   <% if (post.next){ %>
-    <div class="article-nav-link medium-<%= col %> large-<%= col %> columns">
+    <div class="article-nav-link medium-6 large-6 <%= !post.prev ? 'large-offset-6 medium-offset-6' : '' %> columns">
       <a href="<%- url_for(post.next.path) %>" id="article-nav-older" class="article-nav-link-wrap hollow button expanded">
-        <strong class="article-nav-caption"><%- __('older') %></strong>
+        <strong class="article-nav-caption"><%- __('older') %> &rarr;</strong>
         <div class="article-nav-title"><%= post.next.title %></div>
       </a>
     </div>
