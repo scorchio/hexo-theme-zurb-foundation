@@ -2,7 +2,7 @@
 menu:
   Főoldal: /
   Archívum: /archives
-rss: /atom.xml
+rss: /rss.xml
 
 # Content
 excerpt_link: Olvass tovább! →
