@@ -46,6 +46,8 @@ gulp.task('js', function () {
         'bower_components/foundation-sites/dist/foundation.js',
         'bower_components/algoliasearch/dist/algoliasearch.jquery.js',
         'bower_components/algolia-autocomplete.js/dist/autocomplete.jquery.js',
+        'bower_components/photoswipe/dist/photoswipe.js',
+        'bower_components/photoswipe/dist/photoswipe-ui-default.js',
         'js/app.js'])
         .pipe($.concat('app.js'))
         .pipe($.uglify())
