@@ -1,5 +1,5 @@
 <div class="article-dates">
-  <% if (is_post()) { %>
+  <% if (is_home() || is_post()) { %>
   <%= __('post_made_at') %>
   <a href="<%- url_for(post.path) %>" class="<%= class_name %>">
     <time datetime="<%= date_xml(post.date) %>"><%= date(post.date, date_format) %></time>
