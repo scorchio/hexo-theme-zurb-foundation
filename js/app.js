@@ -65,9 +65,4 @@ $(document).ready(function() {
     ]).on('autocomplete:selected', function(event, suggestion, dataset) {
         window.location.href = suggestion.path;
     });
-
-    /*$('body').flowtype({
-        minFont: 16,
-        maxFont: 20
-    });*/
 });
