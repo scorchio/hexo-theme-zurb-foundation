@@ -73,9 +73,20 @@ article {
   margin-bottom: 2em;
 }
 
+.pswp__button--arrow--left, .pswp__button--arrow--right {
+  z-index: 1;
+}
+
 .pswp__caption__center {
+  max-width: initial;
   text-align: center;
-  font-size: 24px;
+  line-height: 1.15;
+  @include breakpoint(small) {
+    font-size: 0.8em;
+  }
+  @include breakpoint(medium) {
+    font-size: 1em;
+  }
 }
 
 blockquote {
@@ -87,4 +98,12 @@ blockquote {
 
 #footer, .widget-title {
   color: #666;
+}
+
+figure {
+  margin: 0.5em 0.5em 1em 0.5em;
+}
+figcaption {
+  font-size: 0.8em;
+  font-style: italic;
 }
