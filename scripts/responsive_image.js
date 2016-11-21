@@ -27,7 +27,7 @@ hexo.extend.tag.register('responsive_image', function (args) {
     if (!slug_mini) return;
 
     var alt = args.shift() || "";
-    var lightbox = args.shift() || true;
+    var caption = args.shift() || true;
 
     var asset_original = this.asset_dir + slug;
     var asset_normal = assetPath(this._id, slug);
@@ -36,8 +36,15 @@ hexo.extend.tag.register('responsive_image', function (args) {
 
     var dimensions = sizeOf(asset_original);
 
-    return '<a class="img-a-lightbox" ' +
+    var lightbox_image_link = '<a class="img-a-lightbox" ' +
         'href="' + asset_normal_url +
         '" data-size="' +  dimensions.width+ 'x' + dimensions.height +
         '"><img src="' + asset_thumb_url + '" alt="' + alt + '"/></a>';
+
+    if (!caption)
+        return lightbox_image_link;
+
+    return '<figure>' + lightbox_image_link +
+            '<figcaption>' + alt + '</figcaption>' +
+        '</figure>';
 });
