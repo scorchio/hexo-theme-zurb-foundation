@@ -15,7 +15,7 @@ widgets:
 - tagcloud
 
 # Miscellaneous
-google_analytics:
+google_analytics: UA-9738002-1
 favicon:
 twitter:
 google_plus:
