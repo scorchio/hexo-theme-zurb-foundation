@@ -3,6 +3,7 @@
 var url = require('url');
 var sizeOf = require('image-size');
 var fs = require('hexo-fs');
+var escape = require('escape-html');
 
 var hexo = hexo || {};
 var asset_path = hexo.extend.tag.env.extensions.asset_path.fn;
@@ -27,6 +28,11 @@ hexo.extend.tag.register('responsive_image', function (args) {
     if (!slug_mini) return;
 
     var alt = args.shift() || "";
+
+    if (alt) {
+        alt = escape(alt);
+    }
+
     var caption = args.shift() || true;
 
     var asset_original = this.asset_dir + slug;
