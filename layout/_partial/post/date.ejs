@@ -4,7 +4,7 @@
   <a href="<%- url_for(post.path) %>" class="<%= class_name %>">
     <time datetime="<%= date_xml(post.date) %>"><%= date(post.date, date_format) %></time>
   </a>
-  <% if (post.updated != post.date) { %>
+  <% if (moment(post.updated).diff(post.date, 'days') !== 0) { %>
   <%= __('post_updated_at') %>
   <a href="<%- url_for(post.path) %>" class="<%= class_name %>">
     <time datetime="<%= date_xml(post.updated) %>"><%= date(post.updated, date_format) %></time>
