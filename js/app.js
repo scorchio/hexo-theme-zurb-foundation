@@ -63,6 +63,6 @@ $(document).ready(function() {
             }
         }
     ]).on('autocomplete:selected', function(event, suggestion, dataset) {
-        window.location.href = suggestion.path;
+        window.location.href = '/' + suggestion.path;
     });
 });
