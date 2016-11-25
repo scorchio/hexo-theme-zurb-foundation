@@ -67,7 +67,7 @@ gulp.task('cleanResponsiveImages', function () {
 });
 
 gulp.task('responsiveImages', ['cleanResponsiveImages'], function () {
-    return gulp.src('../../source/_posts/**/*.{png,jpg}')
+    return gulp.src('../../source/_posts/**/*.{png,jpg,gif}')
         .pipe(responsive({
             '**/*.*': [
                 {
