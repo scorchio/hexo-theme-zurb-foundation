@@ -61,7 +61,7 @@ gulp.task('watch', ['foundation-icons', 'photoswipe', 'sassPublic', 'jsPublic'],
 });
 
 gulp.task('cleanResponsiveImages', function () {
-    return gulp.src('../../source/_posts/**/*-responsive-*-*.{png,jpg}')
+    return gulp.src('../../source/_posts/**/*-responsive-*-*.{png,jpg,gif}')
         .pipe(debug({title: 'clean:'}))
         .pipe(clean({force: true}));
 });
