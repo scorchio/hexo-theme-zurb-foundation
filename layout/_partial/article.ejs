@@ -41,9 +41,6 @@
 		  <a class="button hollow article-share-link" href="https://www.facebook.com/sharer/sharer.php?u=<%- encodeURIComponent(post.permalink) %>" data-id="<%= post._id %>"><i class="fi-social-facebook"></i> <%= __('share_on_fb')%></a>
       </div>
 
-      <% if (post.comments && config.disqus_shortname){ %>
-        <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link">Comments</a>
-      <% } %>
     </footer>
     <% } %>
   </div>
