@@ -2,14 +2,6 @@
   <% page.posts.each(function(post){ %>
     <%- partial('article', {post: post, index: true}) %>
   <% }) %>
-  <% if (page.total > 1){ %>
-    <nav id="pagination">
-      <%- foundation_paginator({
-        prev_page_text: __('previous_page'),
-        next_page_text: __('next_page')
-      }) %>
-    </nav>
-  <% } %>
 <% } else { %>
   <% var last; %>
   <% page.posts.each(function(post, i){ %>
@@ -30,4 +22,12 @@
   <% if (page.posts.length){ %>
     </div></section>
   <% } %>
+<% } %>
+<% if (page.total > 1){ %>
+<nav id="pagination">
+  <%- foundation_paginator({
+    prev_page_text: __('previous_page'),
+    next_page_text: __('next_page')
+  }) %>
+</nav>
 <% } %>
