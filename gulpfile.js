@@ -81,6 +81,12 @@ gulp.task('responsiveImages', ['cleanResponsiveImages'], function () {
                     rename: {
                         suffix: "-responsive-mini-256"
                     }
+                },
+                {
+                    width: 128,
+                    rename: {
+                        suffix: "-responsive-micro-128"
+                    }
                 }
             ]
         }, {
