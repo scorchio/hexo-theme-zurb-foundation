@@ -34,6 +34,9 @@ hexo.extend.tag.register('responsive_image', function (args) {
     }
 
     var caption = args.shift() || true;
+    if (caption === 'false') {
+        caption = false;
+    }
 
     var asset_original = this.asset_dir + slug;
     var asset_normal = assetPath(this._id, slug);
