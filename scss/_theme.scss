@@ -80,6 +80,12 @@ article {
   margin-bottom: 2em;
 }
 
+article {
+  h3, h4, h5, h6 {
+    clear: both;
+  }
+}
+
 #pagination {
   text-align: center;
   margin-top: 3em;
@@ -117,8 +123,14 @@ blockquote {
   color: #666;
 }
 
+.float {
+  figure {
+    margin: 0.5em 0.5em 1em 0.5em;
+  }
+}
+
 figure {
-  margin: 0.5em 0.5em 1em 0.5em;
+  margin: 0 0 1em 0;
 }
 figcaption {
   font-size: 0.8em;
@@ -127,4 +139,17 @@ figcaption {
 
 .article-main img + img {
   margin-top: 1em;
+}
+
+.float {
+  @include breakpoint(small only) {
+    float: none !important;
+    clear: both;
+  }
+}
+
+.float-right .spotify {
+  @include breakpoint(medium) {
+    margin-left: 0.5em;
+  }
 }
