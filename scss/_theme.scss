@@ -124,8 +124,10 @@ blockquote {
 }
 
 .float {
+  margin: 0.5em 0.5em 1em 0.5em;
+
   figure {
-    margin: 0.5em 0.5em 1em 0.5em;
+    margin: 0;
   }
 }
 
