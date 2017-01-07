@@ -40,6 +40,9 @@ hexo.extend.tag.register('responsive_image', function (args) {
 
     var asset_original = this.asset_dir + slug;
     var asset_normal = assetPath(this._id, slug);
+    if (asset_normal == undefined) {
+        throw new Error("Can't find the asset with the name " + asset_original + ".");
+    }
     var asset_normal_url = url.resolve(hexo.config.root, asset_normal);
     var asset_thumb_url = url.resolve(hexo.config.root, assetPath(this._id, slug_mini));
 
