@@ -131,8 +131,19 @@ blockquote {
   }
 }
 
+// Figure + figcaption idea based on http://stackoverflow.com/a/24879297/238845
 figure {
   margin: 0 0 1em 0;
+}
+
+@include breakpoint(medium) {
+  figure {
+    width: -moz-min-content;
+    width: min-content;
+  }
+  figure img {
+    max-width: unset;
+  }
 }
 figcaption {
   font-size: 0.8em;
