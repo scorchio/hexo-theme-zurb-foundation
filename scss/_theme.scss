@@ -172,3 +172,19 @@ figcaption {
 audio {
   width: 100%;
 }
+.archive-article {
+  margin-bottom: 1em;
+}
+
+.archive-article-header h1 {
+  line-height: 1;
+  font-size: rem-calc(32);
+}
+
+.archive-article-header .article-dates {
+  margin-bottom: 0.5em;
+}
+
+.archive-year {
+  font-size: rem-calc(24);
+}
