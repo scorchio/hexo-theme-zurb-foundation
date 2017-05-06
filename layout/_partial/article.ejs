@@ -36,11 +36,9 @@
 
     <% if (!post.is_404) { %>
     <footer class="article-footer">
-
       <div class="article-share">
-		  <a class="button hollow article-share-link" href="https://www.facebook.com/sharer/sharer.php?u=<%- encodeURIComponent(post.permalink) %>" data-id="<%= post._id %>"><i class="fi-social-facebook"></i> <%= __('share_on_fb')%></a>
+		  <a class="button hollow article-share-link" href="https://www.facebook.com/sharer/sharer.php?u=<%- encodeURIComponent(post.permalink) %>"><i class="fi-social-facebook"></i> <%= __('share_on_fb')%></a>
       </div>
-
     </footer>
     <% } %>
   </div>
