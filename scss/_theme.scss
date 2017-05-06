@@ -143,7 +143,7 @@ figure {
     width: min-content;
   }
   figure img {
-    max-width: unset;
+    max-width: 650px; // this is piss poor but it will do for now
   }
 }
 figcaption {
