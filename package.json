@@ -1,9 +1,8 @@
 {
   "name": "hexo-theme-zurb-foundation",
-  "repository" :
-  {
-    "type" : "git",
-    "url" : "https://github.com/scorchio/hexo-theme-zurb-foundation.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scorchio/hexo-theme-zurb-foundation.git"
   },
   "version": "0.1.0",
   "devDependencies": {
