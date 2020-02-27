@@ -99,4 +99,5 @@ gulp.task('responsiveImages', ['cleanResponsiveImages'], function () {
         .pipe(gulp.dest('../../source/_posts/'));
 });
 
-gulp.task('default', ['watch']);
+gulp.task('build', ['sass', 'js']);
+gulp.task('default', ['build']);
