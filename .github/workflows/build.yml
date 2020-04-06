@@ -1,6 +1,6 @@
 name: Build theme
 
-on: [commit]
+on: [push]
 
 jobs:
   build:
